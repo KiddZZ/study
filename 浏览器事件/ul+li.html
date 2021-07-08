@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <ul id="ul">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+    </ul>
+  </body>
+  <script type="text/javascript">
+    // const liList = document.querySelectorAll('li')
+    // for(let i = 0; i < liList.length; i++) {
+    //   liList[i].addEventListener('click', (e) => {
+    //     console.log(e.target.innerHTML, i)
+    //   })
+    // }
+    const ul = document.getElementById('ul')
+    ul.addEventListener('click', (e) => {
+      const { target } = e
+      if (e.target.tagName.toLowerCase() === 'li') {
+        const liList = document.querySelectorAll('li')
+        const index = Array.prototype.indexOf.call(liList, target)
+        // const index = [...liList].indexOf(target)
+        console.log(target.innerHTML, index)
+      }
+    })
+  </script>
+  <style>
+    #ul {
+      background-color: gray;
+      width: 700px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    li {
+      margin-bottom: 20px;
+      width: 80%;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: lightgoldenrodyellow;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</html>
